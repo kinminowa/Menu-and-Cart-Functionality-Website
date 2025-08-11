@@ -1,0 +1,811 @@
+  <!DOCTYPE html>
+    <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=1024">
+  <title>Main Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles1.css"> <!-- your CSS file -->
+</head>
+    <body>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="home-text">Home</a></li>
+
+  <li class="services-dropdown">
+  <a href="menu.html" class="services-link">Services</a>
+  <ul class="services-menu">
+    <li><a href="#popular">Popular</a></li>
+    <li><a href="#starters">Starter Dish</a></li>
+    <li><a href="#maincourse">Main Course</a></li>
+    <li><a href="#side-dish">Side Dish</a></li>
+    <li><a href="#drink">Drinks</a></li>
+    <li><a href="#desserts">Desserts</a></li>
+    <li><a href="#bundle">Bundle</a></li>
+  </ul>
+</li>
+
+
+      <li><a href="login.html">Log In</a></li>
+      <li><a href="cart.html" class="cart-icon">🛒</a></li> 
+    </ul>
+  </nav>
+</header>
+
+
+
+<section id="home" class="hero">
+  <img src="logo7.svg" class="main-logo" />
+
+  <div class="menu-section">
+    <div class="menu-info"> 
+      <h1>Discover the Flavors of Filipino Cuisine!</h1>
+      <p>From classic favorites to modern twists—taste the heart of the Philippines.</p>
+      
+      <!-- Order Now button -->
+      <a href="#food-gallery" class="order-btn">Order Now</a>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="popular" class="popular-section">
+  <div class="menu-info">
+    <h1>Popular</h1>
+    <p>Explore our all-time Filipino favorites loved by many for their rich taste and comforting flavors.</p>
+    <div class="thumbnails">
+      <img src="dish4.svg" alt="Adobo" onclick="highlightPopular(0)" />
+      <img src="dish3.svg" alt="Sinigang" onclick="highlightPopular(1)" />
+      <img src="dish5.svg" alt="Kare-Kare" onclick="highlightPopular(2)" />
+      <img src="dish6.svg" alt="Lechon Paksiw" onclick="highlightPopular(3)" />
+      <img src="dish7.svg" alt="Chicken Inasal" onclick="highlightPopular(4)" />
+      <img src="dish8.svg" alt="Tinola" onclick="highlightPopular(5)" />
+    </div>
+  </div>
+
+  <div class="highlight" onclick="cyclePopular()">
+ 
+</section>
+
+  
+
+<section id="food-gallery" class="food-gallery">
+  <div class="food-grid">
+
+    <div class="food-item">
+      <img src="dish4.svg" alt="Adobo">
+      <h3>Adobo</h3>
+      <p class="price">₱150</p>
+      <button class="add-btn">Add Now</button>
+    </div>
+
+    <div class="food-item">
+      <img src="dish3.svg" alt="Sinigang">
+      <h3>Sinigang</h3>
+      <p class="price">₱160</p>
+      <button class="add-btn">Add Now</button>
+    </div>
+
+    <div class="food-item">
+      <img src="dish5.svg" alt="Kare-Kare">
+      <h3>Kare-Kare</h3>
+      <p class="price">₱180</p>
+      <button class="add-btn">Add Now</button>
+    </div>
+
+    <div class="food-item">
+      <img src="dish6.svg" alt="Lechon Paksiw">
+      <h3>Lechon Paksiw</h3>
+      <p class="price">₱200</p>
+      <button class="add-btn">Add Now</button>
+    </div>
+
+    <div class="food-item">
+      <img src="dish7.svg" alt="Chicken Inasal">
+      <h3>Chicken Inasal</h3>
+      <p class="price">₱170</p>
+      <button class="add-btn">Add Now</button>
+    </div>
+
+    <div class="food-item">
+      <img src="dish8.svg" alt="Tinola">
+      <h3>Tinola</h3>
+      <p class="price">₱140</p>
+      <button class="add-btn">Add Now</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Starters Section -->
+<section id="starters" class="starters-section">
+  <div class="menu-info">
+    <h1>Starters</h1>
+    <p>Begin your Filipino feast with flavorful starters that awaken the palate and set the stage for a memorable meal.</p>
+    <div class="thumbnails">
+      <img src="starters1.svg" alt="Food 1" onclick="highlightImage(0)" />
+      <img src="starters2.svg" alt="Food 2" onclick="highlightImage(1)" />
+      <img src="starters3.svg" alt="Food 3" onclick="highlightImage(2)" />
+      <img src="starters4.svg" alt="Food 4" onclick="highlightImage(3)" />
+      <img src="starters5.svg" alt="Food 4" onclick="highlightImage(3)" />
+      <img src="starters6.svg" alt="Food 4" onclick="highlightImage(3)" />
+    </div>
+  </div>
+
+  <div class="highlight" onclick="cycleImage()">
+
+  </div>
+</section>
+
+
+<!-- Starters Gallery -->
+<section class="food-gallery">
+  <div class="container">
+    <div class="food-grid">
+      <div class="food-item">
+        <img src="starters1.svg" alt="Tokwa't Baboy">
+        <h3>Tokwa't Baboy</h3>
+        <p class="price">₱150</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="starters2.svg" alt="Puto">
+        <h3>Puto</h3>
+        <p class="price">₱160</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="starters3.svg" alt="Nilagang Mani">
+        <h3>Nilagang Mani</h3>
+        <p class="price">₱180</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="starters4.svg" alt="Kamote Chips">
+        <h3>Kamote Chips</h3>
+        <p class="price">₱200</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="starters5.svg" alt="Pandesal with Cheese">
+        <h3>Pandesal with Cheese</h3>
+        <p class="price">₱170</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="starters6.svg"Pipino at Kamatis Salad">
+        <h3>Pipino at Kamatis Salad</h3>
+        <p class="price">₱140</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="starters7.svg" alt="Singkamas with Bagoong">
+        <h3>Singkamas with Bagoong</h3>
+        <p class="price">₱140</p>
+        <button class="add-btn">Add Now</button>
+      </div> 
+
+      <div class="food-item">
+        <img src="starters8.svg" alt="Lumpiang Shanghai">
+        <h3>Lumpiang Shanghai</h3>
+        <p class="price">₱140</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+  <img src="starters9.svg" alt="Calamares">
+  <h3>Calamares</h3>
+  <p class="price">₱160</p>
+  <button class="add-btn">Add Now</button>
+</div>
+    </div>
+  </div>
+</section>
+
+<section id="maincourse" class="maincourse-section">
+  <div class="menu-info">
+    <h1>Main Course</h1>
+    <p>Savor the heart of Filipino cuisine with hearty main dishes that bring families together and celebrate tradition in every bite.</p>
+    <div class="thumbnails">
+      <img src="maincourse1.svg" alt="Lechon Kawali" onclick="highlightImage(0)" />
+      <img src="maincourse2.svg" alt="Adobo" onclick="highlightImage(1)" />
+      <img src="maincourse3.svg" alt="Crispy Pata" onclick="highlightImage(2)" />
+      <img src="maincourse4.svg" alt="Kare-Kare" onclick="highlightImage(3)" />
+      <img src="dish6.svg" alt="Kare-Kare" onclick="highlightImage(3)" />
+      <img src="dish5.svg" alt="Kare-Kare" onclick="highlightImage(3)" />
+    </div>
+  </div>
+
+  <div class="highlight" onclick="cycleImage()">
+    <!-- Highlight area content if needed -->
+  </div>
+</section>
+
+
+<!-- Food Gallery Section -->
+<section id="food-gallery" class="food-gallery">
+  <div class="container">
+    <div class="food-grid">
+
+      <div class="food-item">
+        <img src="maincourse1.svg" alt="Halabos na Hipon">
+        <h3>Halabos na Hipon</h3>
+        <p class="price">₱150</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="maincourse2.svg" alt="Pancit Guisado">
+        <h3>Pancit Guisado</h3>
+        <p class="price">₱160</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="maincourse3.svg" alt="Bicol Express">
+        <h3>Bicol Express</h3>
+        <p class="price">₱180</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="dish6.svg" alt="Lechon Kawali">
+        <h3>Lechon Kawali</h3>
+        <p class="price">₱200</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="maincourse4.svg" alt="Crispy Pata">
+        <h3>Crispy Pata</h3>
+        <p class="price">₱170</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="dish4.svg" alt="Adobo">
+        <h3>Adobo</h3>
+        <p class="price">₱140</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="dish8.svg" alt="Tinola">
+        <h3>Tinola</h3>
+        <p class="price">₱140</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="dish5.svg" alt="Kare-Kare">
+        <h3>Kare-Kare</h3>
+        <p class="price">₱140</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+  <img src="maincourse5.svg" alt="Sinigang na Baboy">
+  <h3>Sinigang na Baboy</h3>
+  <p class="price">₱160</p>
+  <button class="add-btn">Add Now</button>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section id="side-dish" class="sidedish-section">
+  <div class="menu-info">
+    <h1>Side Dishes</h1>
+    <p>Complement every meal with flavorful Filipino side dishes that add the perfect balance of taste, texture, and tradition.</p>
+    <div class="thumbnails">
+      <img src="sidedish1.svg" alt="Food 1" onclick="highlightImage(0)" />
+      <img src="sidedish3.svg" alt="Food 2" onclick="highlightImage(1)" />
+      <img src="sidedish4.svg" alt="Food 3" onclick="highlightImage(2)" />
+      <img src="sidedish6.svg" alt="Food 4" onclick="highlightImage(3)" />
+      <img src="sidedish7.svg" alt="Food 5" onclick="highlightImage(4)" />
+      <img src="sidedish9.svg" alt="Food 6" onclick="highlightImage(5)" />
+    </div>
+  </div>
+
+  <div class="highlight" onclick="cycleImage()">
+    <!-- Highlighted image can be dynamically inserted here -->
+  </div>
+</section>
+
+
+<section id="food-gallery" class="food-gallery">
+  <div class="container">
+    <div class="food-grid">
+
+      <div class="food-item">
+        <img src="sidedish1.svg" alt="Atchara">
+        <h3>Atchara</h3>
+        <p class="price">₱150</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="sidedish2.svg" alt="Ensaladang Mangga">
+        <h3>Ensaladang Mangga</h3>
+        <p class="price">₱160</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="sidedish3.svg" alt="Ginisang Kangkong with Tofu">
+        <h3>Ginisang Kangkong with Tofu</h3>
+        <p class="price">₱180</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="sidedish4.svg" alt="Ensaladang Talong">
+        <h3>Ensaladang Talong</h3>
+        <p class="price">₱200</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="sidedish5.svg" alt="Talbos ng Kamote Salad">
+        <h3>Talbos ng Kamote Salad</h3>
+        <p class="price">₱170</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="sidedish6.svg" alt="Togue Omelette">
+        <h3>Togue Omelette</h3>
+        <p class="price">₱140</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="sidedish7.svg" alt="Lumpiang Sariwa">
+        <h3>Lumpiang Sariwa</h3>
+        <p class="price">₱140</p>
+        <button class="add-btn">Add Now</button>
+      </div> 
+
+      <div class="food-item">
+        <img src="sidedish8.svg" alt="Kamatis at Itlog Maalat">
+        <h3>Kamatis at Itlog Maalat</h3>
+        <p class="price">₱140</p>
+        <button class="add-btn">Add Now</button>
+      </div> 
+
+      <div class="food-item">
+  <img src="sidedish9.svg" alt="Ginisang Ampalaya">
+  <h3>Ginisang Ampalaya</h3>
+  <p class="price">₱135</p>
+  <button class="add-btn">Add Now</button>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<section id="drink" class="drink-section">
+  <div class="menu-info">
+    <h1>Drinks</h1>
+    <p>Quench your thirst with traditional Filipino beverages that bring tropical flavors and sweet memories in every sip.</p>
+    <div class="thumbnails">
+      <img src="drink1.svg" alt="Calamansi Juice" onclick="highlightImage(0)" />
+      <img src="drink2.svg" alt="Boracay Pina Colada" onclick="highlightImage(1)" />
+      <img src="drink8.svg" alt="San Miguel Beer" onclick="highlightImage(2)" />
+      <img src="drink4.svg" alt="Tropical Gin and Tonic" onclick="highlightImage(3)" />
+      <img src="drink5.svg" alt="Tropical Gin and Tonic" onclick="highlightImage(3)" />
+      <img src="drink9.svg" alt="Tropical Gin and Tonic" onclick="highlightImage(3)" />
+    </div>
+  </div>
+
+  <div class="highlight" onclick="cycleImage()">
+    <!-- Highlight area -->
+  </div>
+</section>
+
+
+<!-- Drinks Gallery Section -->
+<section id="food-gallery" class="food-gallery">
+  <div class="container">
+    <div class="food-grid">
+
+      <div class="food-item">
+        <img src="drink1.svg" alt="Buko Juice">
+        <h3>Buko Juice</h3>
+        <p class="price">₱150</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="drink2.svg" alt="Mais Con Yelo">
+        <h3>Mais Con Yelo</h3>
+        <p class="price">₱160</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="drink3.svg" alt="Kapeng Barako">
+        <h3>Kapeng Barako</h3>
+        <p class="price">₱180</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="drink4.svg" alt="Calamansi Juice">
+        <h3>Calamansi Juice</h3>
+        <p class="price">₱200</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="drink5.svg" alt="Boracay Pina Colada">
+        <h3>Boracay Pina Colada</h3>
+        <p class="price">₱170</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="drink6.svg" alt="San Miguel Beer">
+        <h3>San Miguel Beer</h3>
+        <p class="price">₱140</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="drink7.svg" alt="Tropical Gin and Tonic">
+        <h3>Tropical Gin and Tonic</h3>
+        <p class="price">₱140</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="drink8.svg" alt="Avocado Shake">
+        <h3>Avocado Shake</h3>
+        <p class="price">₱140</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+          <div class="food-item">
+        <img src="drink9.svg" alt="Avocado Shake">
+        <h3>Halo-Halo Shake</h3>
+        <p class="price">₱140</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="desserts" class="desserts-section">
+  <div class="menu-info">
+    <h1>Desserts</h1>
+    <p>Indulge in beloved Filipino desserts—creamy, colorful, and crafted to satisfy every sweet craving with a local twist.</p>
+    <div class="thumbnails">
+      <img src="desserts9.svg" alt="Kutsinta" onclick="highlightImage(0)" />
+      <img src="desserts8.svg" alt="Maja Blanca" onclick="highlightImage(1)" />
+      <img src="desserts7.svg" alt="Ube Halaya" onclick="highlightImage(2)" />
+      <img src="desserts6.svg" alt="Halo-Halo" onclick="highlightImage(3)" />
+      <img src="desserts5.svg" alt="Halo-Halo" onclick="highlightImage(3)" />
+      <img src="desserts4.svg" alt="Halo-Halo" onclick="highlightImage(3)" />
+    </div>
+  </div>
+
+  <div class="highlight" onclick="cycleImage()">
+    <!-- Highlighted dessert image will appear here -->
+  </div>
+</section>
+
+<section id="dessert-gallery" class="food-gallery">
+  <div class="container">
+    <div class="food-grid">
+
+      <div class="food-item">
+        <img src="desserts1.svg" alt="Buko Pandan">
+        <h3>Buko Pandan</h3>
+        <p class="price">₱150</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="desserts2.svg" alt="Minatamis na Saging">
+        <h3>Minatamis na Saging</h3>
+        <p class="price">₱160</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="desserts3.svg" alt="Palitaw">
+        <h3>Palitaw</h3>
+        <p class="price">₱180</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="desserts4.svg" alt="Kutsinta">
+        <h3>Kutsinta</h3>
+        <p class="price">₱100</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="desserts5.svg" alt="Maja Blanca">
+        <h3>Maja Blanca</h3>
+        <p class="price">₱120</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="desserts6.svg" alt="Ube Halaya">
+        <h3>Ube Halaya</h3>
+        <p class="price">₱130</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="desserts7.svg" alt="Halo-Halo">
+        <h3>Halo-Halo</h3>
+        <p class="price">₱140</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="desserts8.svg" alt="Turon">
+        <h3>Turon</h3>
+        <p class="price">₱110</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+       <div class="food-item">
+        <img src="desserts9.svg" alt="Turon">
+        <h3>Leche Flan</h3>
+        <p class="price">₱210</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+    </div>
+
+<section id="bundle" class="bundle-section">
+  <div class="menu-info">
+    <h1>Bundles</h1>
+    <p>Experience full-course goodness in every bundle — curated for different group sizes, perfect for gatherings or intimate meals.</p>
+    <div class="thumbnails">
+      <img src="bundle1.svg" alt="Bundle 1" onclick="highlightImage(0)" />
+      <img src="bundle2.svg" alt="Bundle 2" onclick="highlightImage(1)" />
+      <img src="bundle3.svg" alt="Bundle 3" onclick="highlightImage(2)" />
+      <img src="bundle4.svg" alt="Bundle 4" onclick="highlightImage(3)" />
+      <img src="bundle5.svg" alt="Bundle 5" onclick="highlightImage(4)" />
+      <img src="bundle6.svg" alt="Bundle 6" onclick="highlightImage(5)" />
+    </div>
+  </div>
+
+  <div class="highlight" onclick="cycleImage()">
+    <!-- optional feature -->
+  </div>
+</section>
+
+
+<section id="bundles-gallery" class="food-gallery">
+  <div class="container">
+    <div class="food-grid">
+
+      <div class="food-item">
+        <img src="bundle1.svg" alt="Feast of Flavors">
+        <h3>Feast of Flavors</h3>
+        <p class="price">₱1,200</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="bundle2.svg" alt="Seafood Celebration">
+        <h3>Seafood Celebration</h3>
+        <p class="price">₱1,300</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="bundle3.svg" alt="Hearty Indulgence">
+        <h3>Hearty Indulgence</h3>
+        <p class="price">₱950</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="bundle4.svg" alt="Spiced Comfort">
+        <h3>Spiced Comfort</h3>
+        <p class="price">₱980</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="bundle5.svg" alt="Grill & Chill">
+        <h3>Grill & Chill</h3>
+        <p class="price">₱1,050</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="bundle6.svg" alt="Balanced Delight">
+        <h3>Balanced Delight</h3>
+        <p class="price">₱700</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+      <div class="food-item">
+        <img src="bundle7.svg" alt="Elegant Simplicity">
+        <h3>Elegant Simplicity</h3>
+        <p class="price">₱1760</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+            <div class="food-item">
+        <img src="bundle8.svg" alt="Lutong Bahay Comfort">
+        <h3>Pinoy Elegance</h3>
+        <p class="price">₱760</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+            <div class="food-item">
+        <img src="bundle9.svg" alt=" Fiesta Favorito">
+        <h3>Fiesta Favorito</h3>
+        <p class="price">₱960</p>
+        <button class="add-btn">Add Now</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <script>
+    const images = ["dish3.svg", "dish4.svg", "dish5.svg", "dish6.svg"];
+    let currentIndex = 0;
+
+    function highlightImage(index) {
+      currentIndex = index;
+      document.getElementById("mainImage").src = images[currentIndex];
+    }
+
+    function cycleImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      document.getElementById("mainImage").src = images[currentIndex];
+    }
+  </script>
+
+  <!-- Live Cart Notification Bar -->
+<!-- Cart Mini Preview -->
+<div id="mini-cart-preview" style="
+  display: none;
+  position: absolute;
+  right: 210px; /* adjust to match your layout */
+  top: 75px;   /* adjust based on cart icon */
+  width: 260px; 
+  
+  border-radius: 10px;
+ 
+  z-index: 1000;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+">
+
+  <div id="mini-cart-content" style="display: flex; align-items: center; gap: 10px;">
+    <!-- Image and info will be inserted here -->
+  </div>
+
+<div style="text-align: right; margin-top: 10px;">
+  <a href="cart.html" style="
+    background-color: #800000;
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle; /* add this */
+    margin-left: auto;       /* optional: push to right */
+    margin-top: -100px;       /* adjust this to move upward */
+  ">Checkout</a>
+</div>
+
+
+</div>
+
+
+
+<script>
+  const buttons = document.querySelectorAll(".add-btn");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", function () {
+      const foodItem = this.closest(".food-item");
+      const name = foodItem.querySelector("h3").innerText;
+      const price = parseFloat(foodItem.querySelector(".price").innerText.replace("₱", ""));
+      const image = foodItem.querySelector("img").src;
+
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      let existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        existingItem = { name, price, image, quantity: 1 };
+        cart.push(existingItem);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      // Show the updated item with correct quantity
+      showMiniCartPreview(existingItem);
+    });
+  });
+
+  function showMiniCartPreview(item) {
+    const miniBox = document.getElementById("mini-cart-preview");
+    const miniContent = document.getElementById("mini-cart-content");
+
+  miniContent.innerHTML = `
+    <img src="${item.image}" alt="${item.name}" style="
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      border-radius: 6px;
+    ">
+    <div style="
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      white-space: normal;
+      word-break: break-word;
+    ">
+      <strong style="
+        font-size: 14px;
+        line-height: 1.2;
+        display: block;
+        margin-left: -100px;
+      ">${item.name}</strong>
+      <span style="font-size: 13px; color: #444; font-weight: 500; margin-left: -130px;">Qty: ${item.quantity}</span>
+    </div>
+  `;
+
+  miniBox.style.display = "block";
+}
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdown = document.querySelector(".services-dropdown");
+    const link = dropdown.querySelector(".services-link");
+
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      dropdown.classList.toggle("open");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("open");
+      }
+    });
+  });
+</script>
+
+
+
+ </body>
+    </html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>About Us - La Damabana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fefefe;
+    }
+
+    body {
+  overflow-x: hidden;
+}
+
+header nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: transparent;
+  display: flex;
+  align-items: center; /* align items horizontally */
+  justify-content: space-between;
+  padding: 10px 30px;
+  z-index: 1000;
+  font-size: 13px;
+  color: white;
+  user-select: none;
+}
+
+nav {
+  height: 150px;  /* set fixed height to the whole nav */
+  display: flex;
+  align-items: center;  /* vertically center the ul inside nav */
+}
+/* Center the navigation links */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  padding: 0;
+  padding-right: 300px; 
+  margin: 0 auto;
+  justify-content: right;
+  align-items: right;
+  flex: 1;
+  height: 40%;
+}
+
+nav ul li a.home-text {
+  color: #460a0a !important;
+}   
+
+nav ul li a {
+  color: white;
+}
+
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 10px;  /* increase top and bottom padding to make nav taller */
+  border-radius: 4px;
+  font-weight: 800;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+   line-height: 2;  /* makes text lines taller */
+}
+
+nav ul li a:hover {
+  background-color: rgba(54, 6, 6, 0.8);
+  color: #000;
+  text-shadow: none;
+}
+
+
+    .about-section {
+      text-align: center;
+      padding: 200px 20px 30px; /* added top padding to offset fixed nav */
+    }
+
+    .about-section h1 {
+      font-size: 36px;
+      color: maroon;
+      margin-bottom: 20px;
+      font-family: 'Lobster', cursive;
+    }
+
+    .about-section p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .food-section {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .food-section h2 {
+      font-size: 28px;
+      color: maroon;
+      font-family: 'Dancing Script', cursive;
+      margin-bottom: 30px;
+    }
+
+.course-image-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(2, 150px);
+  gap: 120px;
+  justify-content: center;
+  padding-top: 30px;
+  margin-right: 90px;
+}
+
+
+.course-image-gallery img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.course-image-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-section {
+  display: none;
+}
+
+.gallery-section.active {
+  display: block;
+}
+
+.site-footer {
+  background-color: white;
+  color: #fff;
+  padding: 60px 40px; /* Increased top-bottom and left-right padding */
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  min-height: 200px; /* Adjust height as needed */
+  box-sizing: border-box;
+  margin-top: 40px;
+}
+
+.site-footer a {
+  color: #f9caca;
+  text-decoration: none;
+  margin: 0 8px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+
+
+    @media (max-width: 500px) {
+      .about-section h1 {
+        font-size: 28px;
+      }
+    }
+    @media (max-width: 768px) {
+  .course-image-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    margin-right: 0;
+    gap: 30px;
+  }
+
+  .course-image-gallery img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-image-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<!-- Navigation Header -->
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="home-text">Home</a></li>
+      <li><a href="menu.html">Services</a></li>
+      <li><a href="login.html">Log In</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<!-- About Section -->
+<section class="about-section">
+  <h1>About La Dambana</h1>
+  <p>
+    La Dambana is a celebration of authentic Filipino flavors and heartwarming food experiences.
+    Our mission is to bring the warmth of home-cooked Filipino meals to every plate.
+    From traditional recipes passed down through generations to modern Pinoy favorites, 
+    La Dambana embraces the culture, hospitality, and passion for food that define the Filipino identity.
+  </p>
+</section>
+
+<!-- Food Section -->
+<section class="food-section">
+  <h2>Filipino Food from Pinoy</h2>
+  <div class="course-image-gallery">
+    <img src="adobo.jpg" alt="Adobo">
+    <img src="sinigang.jpg" alt="Sinigang">
+    <img src="kare-kare.jpg" alt="Kare-Kare">
+    <img src="lechon.jpg" alt="Lechon">
+    <img src="pancit.jpg" alt="Pancit">
+    <img src="halo-halo.jpg" alt="Halo-Halo">
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-content">
+ 
+  </div>
+</footer>
+
+</body>
+</html>
