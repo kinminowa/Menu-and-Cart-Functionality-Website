@@ -1,0 +1,214 @@
+  <!DOCTYPE html>
+    <html lang="en">
+<head>
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; connect-src *">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1024">
+  <title>Cart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles2.css"> <!-- your CSS file -->
+</head>
+    <body>
+
+  <!-- Navbar -->
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="home-text">Home</a></li>
+      <li><a href="menu.html">Services</a></li>
+      <li><a href="login.html">Log In</a></li>
+      <li><a href="cart.html" class="cart-icon">🛒</a></li> 
+    </ul>
+  </nav>
+</header>
+
+
+
+<div class="site-wrapper">
+  <!-- Your page content here -->
+</div>
+
+   
+     <!-- Cart Section -->
+<div class="cart-container">
+  <h2>Your Cart</h2>
+  <div id="cart-list"></div>
+  <p id="cart-total">Total: ₱0</p>
+
+  <div class="cart-buttons">
+    <button onclick="clearCart()">Clear Cart</button>
+    <button onclick="checkout()">Checkout</button>
+  </div>
+</div>
+
+<!-- Login Alert -->
+<div id="login-alert" style="
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128,128,128,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+">
+  <div style="
+    background-color: #f5f5f5;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 400px;
+  ">
+    <p style="color: maroon; font-size: 18px; margin-bottom: 20px;">
+      Please log in before checking out.
+    </p>
+    <button onclick="closeAlert()" style="
+      background-color: maroon;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    ">Log In Now</button>
+  </div>
+</div>
+
+ 
+
+  <script>
+    function showMenu(id) {
+      document.querySelectorAll('.menu-panel').forEach(panel => {
+        panel.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function changeQty(index, delta) {
+  if (cart[index]) {
+    cart[index].quantity += delta;
+    if (cart[index].quantity <= 0) {
+      cart.splice(index, 1);
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();
+  }
+}
+
+function updateCart() {
+  const cartList = document.getElementById("cart-list");
+  const cartTotal = document.getElementById("cart-total");
+  cartList.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    const itemTotal = item.price * item.quantity;
+    total += itemTotal;
+
+    const div = document.createElement("div");
+    div.className = "cart-item";
+
+    div.innerHTML = `
+      <div class="cart-item-info">
+        <img src="${item.image}" alt="${item.name}">
+        <div class="cart-item-details">
+          <strong>${item.name}</strong>
+          <div class="cart-qty">
+            <button onclick="changeQty(${index}, -1)">−</button>
+            <span>${item.quantity}</span>
+            <button onclick="changeQty(${index}, 1)">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="cart-item-price">₱${itemTotal}</div>
+    `;
+
+    cartList.appendChild(div);
+  });
+
+  cartTotal.textContent = `Total: ₱${total}`;
+}
+
+function clearCart() {
+  cart.length = 0; // ✅ clear the in-memory array
+  localStorage.removeItem("cart"); // ✅ clear localStorage
+  updateCart(); // ✅ re-render the empty cart
+}
+
+function checkout() {
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (!user) {
+    alert("Please log in before checking out.");
+    window.location.href = "login.html";
+    return;
+  }
+
+  if (cart.length === 0) {
+    alert("Cart is empty.");
+    return;
+  }
+
+  const orderNumber = Math.floor(Math.random() * 90000) + 10000;
+  let total = 0;
+  let quantity = 0;
+  let items = "";
+
+  cart.forEach(item => {
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
+    quantity += item.quantity;
+    items += `${item.name} (x${item.quantity}) - ₱${subtotal}\n`;
+  });
+
+  const data = new FormData();
+  data.append("name", `${user.firstName} ${user.lastName}`);
+  data.append("email", user.email);
+  data.append("contact", user.contactNumber);
+  data.append("order_items", items);
+  data.append("total", total);
+  data.append("quantity", quantity);
+  data.append("order_number", orderNumber);
+
+  fetch("save_order.php", {
+    method: "POST",
+    body: data,
+  })
+  .then(res => res.text())
+  .then(response => {
+    alert(response);
+    localStorage.removeItem("cart");
+    window.location.href = "menu.html";
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Something went wrong.");
+  });
+}
+
+updateCart(); // ✅ Initial call to render the cart
+</script>
+
+
+
+
+<footer class="site-footer">
+  <div class="footer-content">
+ 
+  </div>
+</footer>
+
+
+</body>
+</html>
+    
+     
